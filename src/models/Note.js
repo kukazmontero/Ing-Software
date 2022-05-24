@@ -1,0 +1,54 @@
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
+
+const NoteSchema = new Schema(
+  {
+    title: {
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
+      required: true,
+    },
+    alternativa1: {
+      type: String,
+      required: true,
+    },
+    alternativa2: {
+      type: String,
+      required: true,
+    },
+    alternativa3: {
+      type: String,
+      required: true,
+    },
+    alternativa4: {
+      type: String,
+      required: true,
+    },
+    alternativa5: {
+      type: String,
+      required: true,
+    },
+    Respuesta: {
+        type: String,
+        required: true,
+      },
+    user: {
+      type: String,
+      required: true,
+    },
+    prueba: {
+      type: String,
+      required: true,
+    },
+    date: {
+        type: Date,
+        default: Date.now
+    }
+  }
+  
+);
+
+module.exports = mongoose.model("Note", NoteSchema);

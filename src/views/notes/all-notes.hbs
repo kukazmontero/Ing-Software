@@ -1,0 +1,54 @@
+<div class="row">
+  {{#each notes}}
+  <div class="col-md-3">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title d-flex justify-content-between align-items-center">
+          {{ title }} <a href="/notes/edit/{{ _id }}"><i class="fas fa-edit"></i></a>
+        </h4>
+        <p>{{ description }} </p>
+        <form action="/notes/resp/{{ _id }}" method="POST">
+        <div class="form-group">
+        <select id="R" name="R" class="form-control"  value="R">
+                <option value="1" selected>{{ alternativa1 }}</option>
+                <option value="2">{{ alternativa2 }}</option>
+                <option value="3">{{ alternativa3 }}</option>
+                <option value="4">{{ alternativa4 }}</option>
+                <option value="5">{{ alternativa5 }}</option>
+        </select>
+        </div>
+        <div class="form-group">
+        <input name="Ans" class="form-control" type="hidden" value=  {{ _id }}>   
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary btn-block" type="submit">
+            Responder
+          </button>
+        </div>
+        </form>
+        <!-- DELETE REQUEST -->
+        <form action="/notes/delete/{{ _id }}?_method=DELETE" method="POST">
+          <input type="hidden" name="_method" value="DELETE">
+          <button type="submit" class="btn btn-danger btn-block btn-sm">Delete</button>
+        </form>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  
+
+
+  {{else}}
+<div class="card mx-auto">
+    <div class="card-body">
+      <h1>Hola {{user.Nombre}}</h1>
+      <p class="lead">No hay preguntas</p>
+      <p class="lead">Sube una nueva</p>
+    </div>
+  </div>
+  {{/each}}
+</div>
+{{#key}}
+<a href="/notes/fin/{{ _id }}" class="btn btn-primary btn-block">Finalizar Examen</a><br>
+{{/key}}

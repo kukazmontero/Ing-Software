@@ -1,0 +1,43 @@
+
+<div class="jumbotron">
+  <h1 class="display-4">Bienvenido a la plataforma de pruebas tipo PSU del Colegio San Jose de Renca</h1>
+  <p class="lead">Sociedad San Vicente de Paul</p>
+  <hr class="my-4">
+  <p>Nuestro objetivo con esta plataforma es apoyar a los alumnos de 4to medio con pruebas hechas por los mismos profesores, estas son inspiradas en las pruebas PSU de Lenguaje, Matematicas, Historia y Ciencias. De esta forma se espera que el estudiante logre mejorar su rendiemineto en estas areas y que los profesores logren mejorar areas donde los alumnos se encuentran con falencias.</p>
+  
+  {{#if user}}
+
+  <p class="lead">
+    
+      
+    <div class="card-deck">    
+    <div class="col">
+        <div class="card" style="width: 18rem;">
+        <p></p>
+        <img class="card-img-top" src="img/prueba.png" width="80" height="160" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Pruebas</h5>
+            <p class="card-text">Ingresa para realizar una prueba o para crear una.</p>
+        <a href="/pruebas" class="btn btn-secondary">Entrar</a>
+        </div>
+    </div>
+    </div>
+    
+
+
+    <div class="col">
+    <div class="card" style="width: 18rem;">
+        <p></p>
+        <img class="card-img-top" src="img/resultado.png" width="80" height="160" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Resultados</h5>
+            <p class="card-text">Aqui podras observar tus resultados y el de tus alumnos.</p>
+        <a href="#" class="btn btn-secondary">Entrar</a>
+        </div>
+    </div>
+    </div>
+    </div>
+   
+  </p>
+  {{/if}}
+</div>
